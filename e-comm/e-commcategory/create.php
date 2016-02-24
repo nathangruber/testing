@@ -29,7 +29,7 @@
         if (true) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO creditcard (name,description) values(?, ?)";
+            $sql = "INSERT INTO category (name,description) values(?, ?)";
             $q = $pdo->prepare($sql);
             $q->execute(array($name,$description));
             Database::disconnect();
