@@ -1,15 +1,12 @@
 <?php
     require '../database.php';
  
-    $id = null;
-    if ( !empty($_GET['id'])) {
-        $id = $_REQUEST['id'];
-    }
-     
-    if ( null==$id ) {
+    if ( !isset($_GET['id']) || empty($_GET['id'])) {
         header("Location: index.php");
-    }
+    } 
+    $id = $_GET['id'];
      
+    
     if ( !empty($_POST)) {
         // keep track validation errors
         $nameError = null;
