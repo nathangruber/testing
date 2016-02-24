@@ -76,8 +76,8 @@
         $sql = "SELECT * FROM address where id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
-        $data = $q->fetch(PDO::FETCH_ASSOC);
-        if($data == false){
+        //$data = $q->fetch(PDO::FETCH_ASSOC);
+        if(($data = $q->fetch(PDO::FETCH_ASSOC)) == false){
             header("Location: index.php");
         }
         $name = $data['name'];
