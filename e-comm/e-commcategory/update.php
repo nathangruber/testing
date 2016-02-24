@@ -1,5 +1,6 @@
 <?php
     require '../database.php';
+  
   if ( !isset($_GET['id']) || empty($_GET['id'])) {
         header("Location: index.php");
     } 
@@ -47,7 +48,6 @@
         }
         $name = $data['name'];
         $description = $data['description'];
-        
         Database::disconnect();
     }
 ?>
