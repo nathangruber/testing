@@ -74,7 +74,7 @@
                             <?php endif; ?>
                         </div>
                       </div>
-                      <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
+                      <div class="control-group <?php echo !empty($cardnumberError)?'error':'';?>">
                         <label class="control-label">Credit Card Number</label>
                         <div class="controls">
                             <input name="cardnumber" type="text" placeholder="Credit Card Number" value="<?php echo !empty($cardnumber)?$cardnumber:'';?>">
