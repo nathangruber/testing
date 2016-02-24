@@ -48,8 +48,7 @@
             $email_addressError = 'Please enter a valid Email Address';
             $valid = false;
         }
-
-        if (empty($permissions)) {
+         if (empty($permissions)) {
             $permissionsError = 'Please enter Permissions';
             $valid = false;
         }
