@@ -53,7 +53,7 @@
             $permissionsError = 'Please enter Permissions';
             $valid = false;
         }
-        if (empty($user_name)) {
+        if (empty($username)) {
             $user_nameError = 'Please enter your Username';
             $valid = false;
         }
@@ -66,9 +66,9 @@
         if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO customer (name,birth_date,gender,phone_number,email_address,permissions,user_name,password) values(?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO customer (name,birth_date,gender,phone_number,email_address,permissions,username,password) values(?, ?, ?, ?, ?, ?, ?, ?)";
             $q = $pdo->prepare($sql);
-            $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$user_name,$password));
+            $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$username,$password));
             Database::disconnect();
             header("Location: index.php");
         }
