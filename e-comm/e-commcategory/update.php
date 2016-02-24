@@ -1,30 +1,19 @@
 <?php
     require '../database.php';
- 
-    $id = null;
-    if ( !empty($_GET['id'])) {
-        $id = $_REQUEST['id'];
-    }
-     
-    if ( null==$id ) {
+  if ( !isset($_GET['id']) || empty($_GET['id'])) {
         header("Location: index.php");
-    }
+    } 
+    $id = $_GET['id'];
      
-    if ( !empty($_POST)) {
+      if ( !empty($_POST)) {
         // keep track validation errors
         $nameError = null;
         $descriptionError = null;
-        
-      
-         
-        // keep track post values
+         // keep track post values
         $name = $_POST['name'];
         $description = $_POST['description'];
         
-        
-
-
-        // validate input
+         // validate input
         $valid = true;
         if (empty($name)) {
             $nameError = 'Please enter Name';
@@ -53,7 +42,9 @@
         $sql = "SELECT * FROM category where id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
-        $data = $q->fetch(PDO::FETCH_ASSOC);
+        if(($data = $q->fetch(PDO::FETCH_ASSOC)) == false){
+            header("Location: index.php");
+        }
         $name = $data['name'];
         $description = $data['description'];
         
