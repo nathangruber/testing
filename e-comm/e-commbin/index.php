@@ -24,7 +24,7 @@
                   </thead>
                   <tbody>
                   <?php
-                   include 'database.php';
+                   include '../database.php';
                    $pdo = Database::connect();
                    $sql = 'SELECT * FROM bin ORDER BY id DESC';
                    foreach ($pdo->query($sql) as $row) {
