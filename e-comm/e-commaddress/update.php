@@ -77,6 +77,9 @@
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
         $data = $q->fetch(PDO::FETCH_ASSOC);
+        if($data == false){
+            header("Location: index.php");
+        }
         $name = $data['name'];
         $street_1 = $data['street_1'];
         $street_2 = $data['street_2'];
