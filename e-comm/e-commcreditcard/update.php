@@ -95,7 +95,7 @@
                       <div class="control-group <?php echo !empty($cardnumberError)?'error':'';?>">
                         <label class="control-label">Credit Card Number</label>
                         <div class="controls">
-                            <input name="cardnumber" type="text" placeholder="cardnumber" value="<?php echo !empty($cardnumber)?$cardnumber:'';?>">
+                            <input name="cardnumber" type="text" placeholder="Credit Card Number" value="<?php echo !empty($cardnumber)?$cardnumber:'';?>">
                             <?php if (!empty($cardnumberError)): ?>
                                 <span class="help-inline"><?php echo $cardnumberError;?></span>
                             <?php endif;?>
@@ -104,7 +104,7 @@
                       <div class="control-group <?php echo !empty($expiration_dateError)?'error':'';?>">
                         <label class="control-label">Expiration Date</label>
                         <div class="controls">
-                            <input name="expiration_date" type="text"  placeholder="expiration_date" value="<?php echo !empty($expiration_date)?$expiration_date:'';?>">
+                            <input name="expiration_date" type="text"  placeholder="Expiration Date" value="<?php echo !empty($expiration_date)?$expiration_date:'';?>">
                             <?php if (!empty($expiration_dateError)): ?>
                                 <span class="help-inline"><?php echo $expiration_dateError;?></span>
                             <?php endif;?>
@@ -113,7 +113,7 @@
                       <div class="control-group <?php echo !empty($security_codeError)?'error':'';?>">
                         <label class="control-label">Security Code</label>
                         <div class="controls">
-                            <input name="security_code" type="text"  placeholder="security_code" value="<?php echo !empty($security_code)?$security_code:'';?>">
+                            <input name="security_code" type="text"  placeholder="Security Code" value="<?php echo !empty($security_code)?$security_code:'';?>">
                             <?php if (!empty($security_codeError)): ?>
                                 <span class="help-inline"><?php echo $security_codeError;?></span>
                             <?php endif;?>
