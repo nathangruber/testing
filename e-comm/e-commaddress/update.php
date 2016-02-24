@@ -1,7 +1,7 @@
 <?php
     require '../database.php';
  
-    if ( !empty($_GET['id'])) {
+    if ( isset($_GET['id'])) {
         header("Location: index.php");
     }
      
