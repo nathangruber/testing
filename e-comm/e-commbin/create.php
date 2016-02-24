@@ -24,7 +24,7 @@
         if (true) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO creditcard (name) values(?)";
+            $sql = "INSERT INTO bin (name) values(?)";
             $q = $pdo->prepare($sql);
             $q->execute(array($name));
             Database::disconnect();
