@@ -20,13 +20,13 @@
          
         // keep track post values
         $name = $_POST['name'];
-        $birth_date = $_POST['street_1'];
-        $gender = $_POST['street_2'];
-        $phone_number = $_POST['city'];
-        $email_address = $_POST['state'];
-        $permissions = $_POST['zip_code'];
-        $username = $_POST['country'];
-        $password = $_POST['country'];
+        $birth_date = $_POST['birth_date'];
+        $gender = $_POST['gender'];
+        $phone_number = $_POST['phone_number'];
+        $email_address = $_POST['email_address'];
+        $permissions = $_POST['permissions'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
 
         // validate input
