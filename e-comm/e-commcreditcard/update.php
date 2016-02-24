@@ -1,14 +1,10 @@
 <?php
     require '../database.php';
  
-    $id = null;
-    if ( !empty($_GET['id'])) {
-        $id = $_REQUEST['id'];
-    }
-     
-    if ( null==$id ) {
+    if ( !isset($_GET['id']) || empty($_GET['id'])) {
         header("Location: index.php");
-    }
+    } 
+    $id = $_GET['id'];
      
     if ( !empty($_POST)) {
         // keep track validation errors
@@ -60,7 +56,9 @@
         $sql = "SELECT * FROM creditcard where id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
-        $data = $q->fetch(PDO::FETCH_ASSOC);
+        if(($data = $q->fetch(PDO::FETCH_ASSOC)) == false){
+            header("Location: index.php");
+        }
         $name = $data['name'];
         $cardnumber = $data['cardnumber'];
         $expiration_date = $data['expiration_date'];
