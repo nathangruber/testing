@@ -32,7 +32,7 @@
         if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "UPDATE bin  set name = ? WHERE id = ?";
+            $sql = "UPDATE bin set name = ? WHERE id = ?";
             $q = $pdo->prepare($sql);
             $q->execute(array($name,$id));
             Database::disconnect();
@@ -62,7 +62,7 @@
      
                 <div class="span10 offset1">
                     <div class="row">
-                        <h3>Update a Name</h3>
+                        <h3>Update Bin</h3>
                     </div>
              
                     <form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">

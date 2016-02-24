@@ -44,12 +44,12 @@
      
                 <div class="span10 offset1">
                     <div class="row">
-                        <h3>Create Name</h3>
+                        <h3>Create Bin</h3>
                     </div>
              
                     <form class="form-horizontal" action="create.php" method="post">
                       <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
-                        <label class="control-label">Name</label>
+                        <label class="control-label">Bin</label>
                         <div class="controls">
                             <input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
                             <?php if (!empty($nameError)): ?>
