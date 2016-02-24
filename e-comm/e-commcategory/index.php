@@ -26,9 +26,9 @@
                   </thead>
                   <tbody>
                   <?php
-                   include 'database.php';
+                   include '../database.php';
                    $pdo = Database::connect();
-                   $sql = 'SELECT * FROM customers ORDER BY id DESC';
+                   $sql = 'SELECT * FROM category ORDER BY id DESC';
                    foreach ($pdo->query($sql) as $row) {
                             echo '<tr>';
                             echo '<td>'. $row['name'] . '</td>';

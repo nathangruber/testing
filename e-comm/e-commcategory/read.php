@@ -1,5 +1,5 @@
 <?php
-    require 'database.php';
+    require '../database.php';
     $id = null;
     if ( !empty($_GET['id'])) {
         $id = $_REQUEST['id'];
@@ -10,7 +10,7 @@
     } else {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT * FROM customers where id = ?";
+        $sql = "SELECT * FROM category where id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
         $data = $q->fetch(PDO::FETCH_ASSOC);
@@ -30,7 +30,7 @@
      
                 <div class="span10 offset1">
                     <div class="row">
-                        <h3>Read a Address</h3>
+                        <h3>Read a Category</h3>
                     </div>
                      
                     <div class="form-horizontal" >
@@ -51,9 +51,7 @@
                         </div>
                       </div>
                       
-                     
-                      
-                    </div>
+                      </div>
                 </div>
                  
     </div> <!-- /container -->

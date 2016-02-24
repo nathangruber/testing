@@ -1,5 +1,5 @@
 <?php
-    require 'database.php';
+    require '../database.php';
     $id = 0;
      
     if ( !empty($_GET['id'])) {
@@ -13,7 +13,7 @@
         // delete data
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "DELETE FROM customers  WHERE id = ?";
+        $sql = "DELETE FROM category  WHERE id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
         Database::disconnect();

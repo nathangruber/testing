@@ -1,6 +1,6 @@
 <?php
      
-    require 'database.php';
+    require '../database.php';
  
     if ( !empty($_POST)) {
         // keep track validation errors
@@ -9,7 +9,7 @@
         
         // keep track post values
         $name = $_POST['name'];
-        $description = $_POST['street_1'];
+        $description = $_POST['description'];
         
         // validate input
        $valid = true;
@@ -19,7 +19,7 @@
         }
          
         if (empty($description)) {
-            $descriptionError = '';
+            $descriptionError = 'Description';
             $valid = false;
          }
          
@@ -65,19 +65,14 @@
                       <div class="control-group <?php echo !empty($descriptionError)?'error':'';?>">
                         <label class="control-label">Description</label>
                         <div class="controls">
-                            <input name="description" type="text" placeholder="description" value="<?php echo !empty($description)?$description:'';?>">
+                            <input name="description" type="text" placeholder="Description" value="<?php echo !empty($description)?$description:'';?>">
                             <?php if (!empty($descriptionError)): ?>
                                 <span class="help-inline"><?php echo $descriptionError;?></span>
                             <?php endif;?>
                         </div>
                       </div>
                     
-
-
-
-
-
-                      <div class="form-actions">
+                            <div class="form-actions">
                           <button type="submit" class="btn btn-success">Create</button>
                           <a class="btn" href="index.php">Back</a>
                         </div>

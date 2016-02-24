@@ -1,5 +1,5 @@
 <?php
-    require 'database.php';
+    require '../database.php';
  
     $id = null;
     if ( !empty($_GET['id'])) {
@@ -31,8 +31,8 @@
             $valid = false;
         }
          
-        if (empty($street_1)) {
-            $street_1Error = 'Please enter Description';
+        if (empty($description)) {
+            $descriptionError = 'Please enter Description';
             $valid = false;
       //email verification was here
         }
@@ -41,7 +41,7 @@
         if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "UPDATE customers  set name = ?, description = ?, WHERE id = ?";
+            $sql = "UPDATE category set name = ?, description = ? WHERE id = ?";
             $q = $pdo->prepare($sql);
             $q->execute(array($name,$description,$id));
             Database::disconnect();
@@ -50,7 +50,7 @@
     } else {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT * FROM customers where id = ?";
+        $sql = "SELECT * FROM category where id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
         $data = $q->fetch(PDO::FETCH_ASSOC);
@@ -96,13 +96,7 @@
                         </div>
                       </div>
                       
-                      
-
-
-
-
-
-                        <div class="form-actions">
+                         <div class="form-actions">
                           <button type="submit" class="btn btn-success">Update</button>
                           <a class="btn" href="index.php">Back</a>
                         </div>
