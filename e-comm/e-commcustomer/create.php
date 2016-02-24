@@ -54,7 +54,7 @@
             $valid = false;
         }
         if (empty($username)) {
-            $user_nameError = 'Please enter your Username';
+            $usernameError = 'Please enter your Username';
             $valid = false;
         }
         if (empty($password)) {
