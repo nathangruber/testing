@@ -152,7 +152,7 @@
                         <label class="control-label">Email Address</label>
                         <div class="controls">
                             <input name="email_address" type="text"  placeholder="Email Address" value="<?php echo !empty($email_address)?$email_address:'';?>">
-                            <?php if (!empty($email_adressError)): ?>
+                            <?php if (!empty($email_addressError)): ?>
                                 <span class="help-inline"><?php echo $email_addressError;?></span>
                             <?php endif; ?>
                         </div>
