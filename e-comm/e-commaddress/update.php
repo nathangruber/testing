@@ -1,12 +1,7 @@
 <?php
     require '../database.php';
  
-    $id = null;
     if ( !empty($_GET['id'])) {
-        $id = $_REQUEST['id'];
-    }
-     
-    if ( null==$id ) {
         header("Location: index.php");
     }
      
@@ -65,10 +60,10 @@
             $valid = false;
         }
         // update data
-        if ($true) {
+        if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "UPDATE address  set name = ?, street_1 = ?, street_2 =?, city = ?, state = ?, zip_code = ?, country = ? WHERE id = ?";
+            $sql = "UPDATE address set name = ?, street_1 = ?, street_2 =?, city = ?, state = ?, zip_code = ?, country = ? WHERE id = ?";
             $q = $pdo->prepare($sql);
             $q->execute(array($name,$street_1,$street_2,$city,$state,$zip_code,$country,$id));
             Database::disconnect();
@@ -171,11 +166,6 @@
                             <?php endif; ?>
                         </div>
                       </div>
-
-
-
-
-
 
                         <div class="form-actions">
                           <button type="submit" class="btn btn-success">Update</button>
