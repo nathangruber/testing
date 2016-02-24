@@ -133,7 +133,7 @@
                       <div class="control-group <?php echo !empty($genderError)?'error':'';?>">
                         <label class="control-label">Gender</label>
                         <div class="controls">
-                            <input name="gender" type="text"  placeholder="Gender" value="<?php echo !empty($gender)?$street_2:'';?>">
+                            <input name="gender" type="text"  placeholder="Gender" value="<?php echo !empty($gender)?$gender:'';?>">
                             <?php if (!empty($genderError)): ?>
                                 <span class="help-inline"><?php echo $genderError;?></span>
                             <?php endif;?>
@@ -185,13 +185,7 @@
                         </div>
                       </div>
 
-
-
-
-
-
-
-                        <div class="form-actions">
+                             <div class="form-actions">
                           <button type="submit" class="btn btn-success">Update</button>
                           <a class="btn" href="index.php">Back</a>
                         </div>
