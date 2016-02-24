@@ -3,7 +3,8 @@
  
     if ( !isset($_GET['id'])) {
         header("Location: index.php");
-    }
+    } 
+    $id = $_GET['id'];
      
     if ( !empty($_POST)) {
         // keep track validation errors
