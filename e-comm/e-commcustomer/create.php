@@ -1,6 +1,6 @@
 <?php
      
-    require 'database.php';
+    require '../database.php';
  
     if ( !empty($_POST)) {
         // keep track validation errors
@@ -49,8 +49,7 @@
             $valid = false;
         }
 
-
-         if (empty($permissions)) {
+        if (empty($permissions)) {
             $permissionsError = 'Please enter Permissions';
             $valid = false;
         }
@@ -64,10 +63,10 @@
         }
        
         // insert data
-        if (true) {
+        if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO creditcard (name,birth_date,gender,phone_number,email_address,permissions,user_name,password) values(?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO customer (name,birth_date,gender,phone_number,email_address,permissions,user_name,password) values(?, ?, ?, ?, ?, ?, ?, ?)";
             $q = $pdo->prepare($sql);
             $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$user_name,$password));
             Database::disconnect();
@@ -168,11 +167,7 @@
                       </div>
 
 
-
-
-
-
-                      <div class="form-actions">
+                             <div class="form-actions">
                           <button type="submit" class="btn btn-success">Create</button>
                           <a class="btn" href="index.php">Back</a>
                         </div>

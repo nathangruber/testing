@@ -1,5 +1,5 @@
 <?php
-    require 'database.php';
+    require '../database.php';
  
     $id = null;
     if ( !empty($_GET['id'])) {
@@ -72,7 +72,7 @@
         if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "UPDATE customers  set name = ?, birth_date = ?, gender =?, phone_number = ?, email_address = ?, permissions = ?, username = ?, password = ?, WHERE id = ?";
+            $sql = "UPDATE customers set name = ?, birth_date = ?, gender =?, phone_number = ?, email_address = ?, permissions = ?, username = ?, password = ? WHERE id = ?";
             $q = $pdo->prepare($sql);
             $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$username,$password,$id));
             Database::disconnect();
