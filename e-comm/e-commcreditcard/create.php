@@ -1,6 +1,6 @@
 <?php
      
-    require 'database.php';
+    require '../database.php';
  
     if ( !empty($_POST)) {
         // keep track validation errors
@@ -16,7 +16,7 @@
         $security_code = $_POST['security_code'];
       
         // validate input
-      /*  $valid = true;
+        $valid = true;
         if (empty($name)) {
             $nameError = 'Please enter Name';
             $valid = false;
@@ -36,9 +36,9 @@
             $valid = false;
         }
          
-*/
+
         // insert data
-        if (true) {
+        if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "INSERT INTO creditcard (name,cardnumber,expiration_date,security_code) values(?, ?, ?, ?)";

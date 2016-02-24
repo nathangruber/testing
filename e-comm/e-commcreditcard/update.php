@@ -1,5 +1,5 @@
 <?php
-    require 'database.php';
+    require '../database.php';
  
     $id = null;
     if ( !empty($_GET['id'])) {
@@ -48,7 +48,7 @@
         if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "UPDATE customers  set name = ?, cardnumber = ?, expiration_date =?, security_code = ?, WHERE id = ?";
+            $sql = "UPDATE customers  set name = ?, cardnumber = ?, expiration_date =?, security_code = ? WHERE id = ?";
             $q = $pdo->prepare($sql);
             $q->execute(array($name,$cardnumber,$expiration_date,$security_code,$id));
             Database::disconnect();
@@ -57,7 +57,7 @@
     } else {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT * FROM customers where id = ?";
+        $sql = "SELECT * FROM creditcard where id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
         $data = $q->fetch(PDO::FETCH_ASSOC);
