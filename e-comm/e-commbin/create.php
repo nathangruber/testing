@@ -49,7 +49,7 @@
              
                     <form class="form-horizontal" action="create.php" method="post">
                       <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
-                        <label class="control-label">Bin</label>
+                        <label class="control-label">Name</label>
                         <div class="controls">
                             <input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
                             <?php if (!empty($nameError)): ?>
