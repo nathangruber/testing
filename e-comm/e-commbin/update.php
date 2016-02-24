@@ -1,5 +1,5 @@
 <?php
-    require 'database.php';
+    require '../database.php';
  
     $id = null;
     if ( !empty($_GET['id'])) {
@@ -29,7 +29,7 @@
          
         
         // update data
-        if ($valid) {
+        if ($true) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "UPDATE bin set name = ? WHERE id = ?";
