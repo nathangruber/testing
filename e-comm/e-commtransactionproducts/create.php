@@ -6,8 +6,8 @@
         // keep track validation errors
         $quantityError = null;
         $transaction_subtotalError = null;
-        $product_fkError = null;
-        $transaction_fkError = null;
+        $product_fk = null;
+        $transaction_fk = null;
         
         // keep track post values
         $quantity = $_POST['quantity'];
