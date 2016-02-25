@@ -11,12 +11,13 @@
         $nameError = null;
         $descriptionError = null;
         $priceError = null;
+        $category_fk = null;
         
         // keep track post values
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
-        
+        $category_fk = $_POST['caegory_fk'];
         // validate input
         $valid = true;
         if (empty($name)) {
@@ -33,14 +34,17 @@
             $priceError = 'Please enter Price';
             $valid = false; 
         }
-       
+       if (empty($cateogry_fk)) {
+            $category_fkError = 'Please enter Category';
+            $valid = false; 
+        }
         // update data
         if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "UPDATE product set name = ?, description = ?, price = ? WHERE id = ?";
+            $sql = "UPDATE product set name = ?, description = ?, price = ?, category_fk = ? WHERE id = ?";
             $q = $pdo->prepare($sql);
-            $q->execute(array($name,$description,$price,$id));
+            $q->execute(array($name,$description,$price,$category_fk,$id));
             Database::disconnect();
             header("Location: index.php");
         }
@@ -57,6 +61,7 @@
         $name = $data['name'];
         $description = $data['description'];
         $price = $data['price'];
+        $category_fk = $data['category_fk'];
         Database::disconnect();
     }
 ?>
@@ -101,6 +106,15 @@
                             <input name="price" type="text"  placeholder="Price" value="<?php echo !empty($price)?$price:'';?>">
                             <?php if (!empty($priceError)): ?>
                                 <span class="help-inline"><?php echo $priceError;?></span>
+                            <?php endif;?>
+                        </div>
+                      </div>
+                      <div class="control-group <?php echo !empty($category_fkError)?'error':'';?>">
+                        <label class="control-label">Category</label>
+                        <div class="controls">
+                            <input name="category_fk" type="text"  placeholder="Category" value="<?php echo !empty($category)?$category:'';?>">
+                            <?php if (!empty($categoryError)): ?>
+                                <span class="help-inline"><?php echo $categoryError;?></span>
                             <?php endif;?>
                         </div>
                       </div>

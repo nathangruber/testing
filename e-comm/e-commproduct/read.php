@@ -59,7 +59,14 @@
                             </label>
                         </div>
                       </div>
-                      
+                      <div class="control-group">
+                        <label class="control-label">Category</label>
+                        <div class="controls">
+                            <label class="checkbox">
+                                <?php echo $data['category_fk'];?>
+                            </label>
+                        </div>
+                      </div>
                      
                       
                     </div>
