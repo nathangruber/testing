@@ -40,9 +40,9 @@
                             echo '<td>'. $row['street_2'] . '</td>';
                             echo '<td>'. $row['city'] . '</td>';
                             echo '<td>'. $row['state'] . '</td>';
-			    echo '<td>'. $row['zip_code'].'</td>'; 	
+			                      echo '<td>'. $row['zip_code'].'</td>'; 	
                             echo '<td>'. $row['country'] . '</td>';
-                           echo '<td width=250>';
+                            echo '<td width=250>';
                                 echo '<a class="btn" href="read.php?id='.$row['id'].'">Read</a>';
                                 echo ' ';
                                 echo '<a class="btn btn-success" href="update.php?id='.$row['id'].'">Update</a>';

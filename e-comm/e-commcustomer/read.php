@@ -99,6 +99,14 @@
                             </label>
                         </div>
                       </div>
+                       <div class="control-group">
+                        <label class="control-label">Customer Address</label>
+                        <div class="controls">
+                            <label class="checkbox">
+                                <?php echo $data['customer_address_id'];?>
+                            </label>
+                        </div>
+                      </div>
                      
                      
                       

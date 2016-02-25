@@ -18,7 +18,7 @@
         $q->execute(array($id));
         Database::disconnect();
         header("Location: index.php");
-         
+         //add try/catch if possible
     }
 ?>
  

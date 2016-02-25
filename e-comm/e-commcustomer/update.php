@@ -17,6 +17,7 @@
         $permissionsError = null;
         $usernameError= null;
         $passwordError= null;
+        $customer_address_id= null;
          
         // keep track post values
         $name = $_POST['name'];
@@ -27,7 +28,7 @@
         $permissions = $_POST['permissions'];
         $username = $_POST['username'];
         $password = $_POST['password'];
-
+        $customer_address_id = $_POST['customer_address_id'];
 
         // validate input
         $valid = true;
@@ -65,13 +66,17 @@
             $passwordError = 'Please enter your Password';
             $valid = false;
         }
+        if (empty($customer_address_id)) {
+            $passwordError = 'Please enter Customer Address';
+            $valid = false;
+        }
         // update data
         if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "UPDATE customers set name = ?, birth_date = ?, gender =?, phone_number = ?, email_address = ?, permissions = ?, username = ?, password = ? WHERE id = ?";
+            $sql = "UPDATE customers set name = ?, birth_date = ?, gender =?, phone_number = ?, email_address = ?, permissions = ?, username = ?, password = ?, customer_address_id = ? WHERE id = ?";
             $q = $pdo->prepare($sql);
-            $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$username,$password,$id));
+            $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$username,$password,$customer_address_id,$id));
             Database::disconnect();
             header("Location: index.php");
         }
@@ -92,6 +97,7 @@
         $permissions = $data['permissions'];
         $username = $data['username'];
         $password = $data['password'];
+        $customer_address_id = $data['customer_address_id'];
         Database::disconnect();
     }
 ?>
@@ -181,6 +187,15 @@
                             <input name="password" type="text"  placeholder="Password" value="<?php echo !empty($password)?$password:'';?>">
                             <?php if (!empty($passwordError)): ?>
                                 <span class="help-inline"><?php echo $passwordError;?></span>
+                            <?php endif; ?>
+                        </div>
+                      </div>
+                      <div class="control-group <?php echo !empty($customer_address_idError)?'error':'';?>">
+                        <label class="control-label">Customer Address</label>
+                        <div class="controls">
+                            <input name="customer_address_id" type="text"  placeholder="Customer Address" value="<?php echo !empty($customer_address_id)?$customer_address_id:'';?>">
+                            <?php if (!empty($customer_address_idError)): ?>
+                                <span class="help-inline"><?php echo $customer_address_idError;?></span>
                             <?php endif; ?>
                         </div>
                       </div>
