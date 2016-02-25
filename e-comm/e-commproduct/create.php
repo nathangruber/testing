@@ -7,11 +7,13 @@
         $nameError = null;
         $descriptionError = null;
         $priceError = null;
+        $categoryError = null;
         
         // keep track post values
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
+        $category = $_POST['category'];
         
         // validate input
        $valid = true;
@@ -29,15 +31,19 @@
             $priceError = 'Please enter Price';
             $valid = false;
         }
-       
+
+        if (empty($category)) {
+            $categoryError = 'Please enter Category';
+            $valid = false;
+        }       
         // insert data
         if ($valid) {
 	
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO product (name,description,price) values(?, ?, ?)";
+            $sql = "INSERT INTO product (name,description,price,category_fk) values(?, ?, ?, ?)";
             $q = $pdo->prepare($sql);
-            $q->execute(array($name,$description,$price));
+            $q->execute(array($name,$description,$price,$category));
             Database::disconnect();
             header("Location: index.php");
 	}
@@ -86,6 +92,17 @@
                             <?php endif;?>
                         </div>
                       </div>
+                      <div class="control-group <?php echo !empty($categoryError)?'error':'';?>">
+                        <label class="control-label">Category</label>
+                        <div class="controls">
+                            <input name="category" type="text"  placeholder="Category" value="<?php echo !empty($category)?$category:'';?>">
+                            <?php if (!empty($categoryError)): ?>
+                                <span class="help-inline"><?php echo $categoryError;?></span>
+                            <?php endif;?>
+                        </div>
+                      </div>
+
+
 
                       <div class="form-actions">
                           <button type="submit" class="btn btn-success">Create</button>

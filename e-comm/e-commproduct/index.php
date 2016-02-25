@@ -20,9 +20,11 @@
                 <table class="table table-striped table-bordered">
                   <thead>
                     <tr>
+                      <th>ID</th>
                       <th>Name</th>
                       <th>Description</th>
                       <th>Price</th>
+                      <th>Category</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -32,9 +34,11 @@
                    $sql = 'SELECT * FROM product ORDER BY id DESC';
                    foreach ($pdo->query($sql) as $row) {
                              echo '<tr>';
+                             echo '<td>'. $row['id'] . '</td>';
                              echo '<td>'. $row['name'] . '</td>';
                              echo '<td>'. $row['description'] . '</td>';
                              echo '<td>'. $row['price'] . '</td>';
+                             echo '<td>'. $row['category_fk'] . '</td>';
                              echo '<td width=250>';
                              echo '<a class="btn" href="read.php?id='.$row['id'].'">Read</a>';
                              echo ' ';
