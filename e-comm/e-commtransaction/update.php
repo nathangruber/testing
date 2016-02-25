@@ -133,6 +133,25 @@
                             <?php endif;?>
                         </div>
                       </div>
+                       <div class="control-group <?php echo !empty($customer_fkError)?'error':'';?>">
+                        <label class="control-label">Customer</label>
+                        <div class="controls">
+                            <input name="customer_fk" type="text"  placeholder="Customer" value="<?php echo !empty($customer_fk)?$customer_fk:'';?>">
+                            <?php if (!empty($customer_fkError)): ?>
+                                <span class="help-inline"><?php echo $customer_fkError;?></span>
+                            <?php endif;?>
+                        </div>
+                      </div>
+                       <div class="control-group <?php echo !empty($creditcard_fkError)?'error':'';?>">
+                        <label class="control-label">Cart</label>
+                        <div class="controls">
+                            <input name="creditcard_fk" type="text"  placeholder="Cart" value="<?php echo !empty($creditcard_fk)?$creditcard_fk:'';?>">
+                            <?php if (!empty($creditcard_fkError)): ?>
+                                <span class="help-inline"><?php echo $creditcard_fkError;?></span>
+                            <?php endif;?>
+                        </div>
+                      </div>
+                      
                       
 
                         <div class="form-actions">
