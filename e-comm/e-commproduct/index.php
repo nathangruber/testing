@@ -27,7 +27,7 @@
                   <tbody>
                   <?php
                    require_once '../database.php';
-                   echo '<table>'
+            
                    $pdo = Database::connect();
                    $sql = 'SELECT * FROM product ORDER BY id DESC';
                    foreach ($pdo->query($sql) as $row) {
@@ -45,7 +45,7 @@
                              echo '</tr>';
                    }
                    Database::disconnect();
-                  echo '</table>';
+                 
                   ?>
                   </tbody>
             </table>
