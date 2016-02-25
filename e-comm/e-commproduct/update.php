@@ -34,7 +34,7 @@
             $priceError = 'Please enter Price';
             $valid = false; 
         }
-       if (empty($cateogry_fk)) {
+       if (empty($category_fk)) {
             $category_fkError = 'Please enter Category';
             $valid = false; 
         }
