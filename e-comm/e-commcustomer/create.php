@@ -1,6 +1,6 @@
 <?php
      
-    require '../database.php';
+    require_once '../database.php';
  
     if ( !empty($_POST)) {
         // keep track validation errors
@@ -63,6 +63,7 @@
        
         // insert data
         if ($valid) {
+           try{
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "INSERT INTO customer (name,birth_date,gender,phone_number,email_address,permissions,username,password) values(?, ?, ?, ?, ?, ?, ?, ?)";
@@ -70,6 +71,12 @@
             $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$username,$password));
             Database::disconnect();
             header("Location: index.php");
+        } catch (PDOException $e) {
+            //echo "msg: " . $e->getMessage();
+            //die);
+            Database::disconnect();
+            header("Location: index.php");
+        }
         }
     }
 ?>

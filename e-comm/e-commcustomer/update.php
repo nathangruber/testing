@@ -1,5 +1,5 @@
 <?php
-    require '../database.php';
+    require_once '../database.php';
  
  if ( !isset($_GET['id']) || empty($_GET['id'])) {
         header("Location: index.php");
