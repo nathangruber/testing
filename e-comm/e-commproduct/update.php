@@ -55,8 +55,8 @@
             header("Location: index.php");
         }
         $name = $data['name'];
-        $street_1 = $data['description'];
-        $street_2 = $data['price'];
+        $description = $data['description'];
+        $price = $data['price'];
         Database::disconnect();
     }
 ?>
