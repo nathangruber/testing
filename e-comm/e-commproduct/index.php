@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">       
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
  
 <body>
@@ -27,14 +28,13 @@
                   <tbody>
                   <?php
                    require_once '../database.php';
-            
                    $pdo = Database::connect();
                    $sql = 'SELECT * FROM product ORDER BY id DESC';
                    foreach ($pdo->query($sql) as $row) {
-                            echo '<tr>';
-                            echo '<td>'. $row['name'] . '</td>';
-                            echo '<td>'. $row['description'] . '</td>';
-                            echo '<td>'. $row['price'] . '</td>';
+                             echo '<tr>';
+                             echo '<td>'. $row['name'] . '</td>';
+                             echo '<td>'. $row['description'] . '</td>';
+                             echo '<td>'. $row['price'] . '</td>';
                              echo '<td width=250>';
                              echo '<a class="btn" href="read.php?id='.$row['id'].'">Read</a>';
                              echo ' ';
