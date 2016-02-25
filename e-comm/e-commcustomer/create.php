@@ -12,7 +12,6 @@
         $permissionsError = null;
         $usernameError = null;
         $passwordError = null;
-        $customer_address_id = null;
         // keep track post values
         $name = $_POST['name'];
         $birth_date = $_POST['birth_date'];
@@ -22,7 +21,6 @@
         $permissions = $_POST['permissions'];
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $customer_address_id = $_POST['customer_address_id'];
         // validate input
        $valid = true;
         if (empty($name)) {
@@ -62,19 +60,14 @@
             $passwordError = 'Please enter your Password';
             $valid = false;
         }
-        if (empty($customer_address_id)) {
-            $customer_address_idError = 'Please enter Customer Address';
-            $valid = false;
-        }
-       
        
         // insert data
         if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO customer (name,birth_date,gender,phone_number,email_address,permissions,username,password,customer_address_id) values(?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO customer (name,birth_date,gender,phone_number,email_address,permissions,username,password) values(?, ?, ?, ?, ?, ?, ?, ?)";
             $q = $pdo->prepare($sql);
-            $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$username,$password,$customer_address_id));
+            $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$username,$password));
             Database::disconnect();
             header("Location: index.php");
         }
@@ -84,7 +77,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">      
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
  
 <body>
@@ -171,16 +165,7 @@
                             <?php endif;?>
                         </div>
                       </div>
-                      <div class="control-group <?php echo !empty($customer_address_idError)?'error':'';?>">
-                        <label class="control-label">Customer Address</label>
-                        <div class="controls">
-                            <input name="customer_address_id" type="text"  placeholder="Customer Address" value="<?php echo !empty($customer_address_id)?$customer_address_id:'';?>">
-                            <?php if (!empty($customer_address_idError)): ?>
-                                <span class="help-inline"><?php echo $customer_address_idError;?></span>
-                            <?php endif;?>
-                        </div>
-                      </div>
-
+                     
 
                              <div class="form-actions">
                           <button type="submit" class="btn btn-success">Create</button>

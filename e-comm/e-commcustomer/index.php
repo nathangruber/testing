@@ -27,7 +27,6 @@
                       <th>Permissions</th>
                       <th>Username</th>
                       <th>Password</th>
-                      <th>Customer Address</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -45,7 +44,6 @@
                             echo '<td>'. $row['permissions'] . '</td>';
                             echo '<td>'. $row['username'] . '</td>';
                             echo '<td>'. $row['password'] . '</td>';
-                            echo '<td>'. $row['customer_address_id'] . '</td>';
                            echo '<td width=250>';
                                 echo '<a class="btn" href="read.php?id='.$row['id'].'">Read</a>';
                                 echo ' ';
