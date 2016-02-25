@@ -144,7 +144,7 @@
                       <div class="control-group <?php echo !empty($phone_numberError)?'error':'';?>">
                         <label class="control-label">Phone Number</label>
                         <div class="controls">
-                            <input name="city" type="text"  placeholder="Phone Number" value="<?php echo !empty($phone_number)?$phone_number:'';?>">
+                            <input name="phone_number" type="text"  placeholder="Phone Number" value="<?php echo !empty($phone_number)?$phone_number:'';?>">
                             <?php if (!empty($phone_numberError)): ?>
                                 <span class="help-inline"><?php echo $phone_numberError;?></span>
                             <?php endif;?>
