@@ -1,10 +1,10 @@
 <?php
     require_once '../database.php';
  
-    if ( !isset($_POST['id']) || empty($_POST['id'])) {
+    if ( !isset($_GET['id']) || empty($_GET['id'])) {
         header("Location: index.php");
     } 
-    $id = $_POST['id'];
+    $id = $_GET['id'];
      
     if ( !empty($_POST)) {
         // keep track validation errors
