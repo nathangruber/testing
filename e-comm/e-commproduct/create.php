@@ -1,6 +1,6 @@
 <?php
      
-    require '../database.php';
+    require_once '../database.php';
  
     if ( !empty($_POST)) {
         // keep track validation errors
@@ -86,7 +86,7 @@
                             <?php endif;?>
                         </div>
                       </div>
-                      
+
                       <div class="form-actions">
                           <button type="submit" class="btn btn-success">Create</button>
                           <a class="btn" href="index.php">Back</a>
