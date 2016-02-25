@@ -12,8 +12,8 @@
         $taxError = null;
         $date_Error = null;
         $cartError = null;
-        $customer_fk = null;
-        $creditcard_fk = null;
+        $customer_fkerror = null;
+        $creditcard_fkerror = null;
         
         // keep track post values
         $subtotal = $_POST['subtotal'];
