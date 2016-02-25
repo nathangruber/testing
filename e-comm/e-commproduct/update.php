@@ -11,7 +11,7 @@
         $nameError = null;
         $descriptionError = null;
         $priceError = null;
-        $category_fk = null;
+        $category_fkError = null;
         
         // keep track post values
         $name = $_POST['name'];
