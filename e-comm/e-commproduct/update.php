@@ -17,7 +17,7 @@
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
-        $category_fk = $_POST['caegory_fk'];
+        $category_fk = $_POST['category_fk'];
         // validate input
         $valid = true;
         if (empty($name)) {
