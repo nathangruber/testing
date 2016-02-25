@@ -7,13 +7,13 @@
         $nameError = null;
         $descriptionError = null;
         $priceError = null;
-        $categoryError = null;
+        $category_fkError = null;
         
         // keep track post values
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
-        $category = $_POST['category'];
+        $category_fk = $_POST['category_fk'];
         
         // validate input
        $valid = true;
@@ -32,8 +32,8 @@
             $valid = false;
         }
 
-        if (empty($category)) {
-            $categoryError = 'Please enter Category';
+        if (empty($category_fk)) {
+            $category_fkError = 'Please enter Category';
             $valid = false;
         }       
         // insert data
