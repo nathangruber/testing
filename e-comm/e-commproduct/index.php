@@ -34,7 +34,7 @@
                             echo '<td>'. $row['name'] . '</td>';
                             echo '<td>'. $row['description'] . '</td>';
                             echo '<td>'. $row['price'] . '</td>';
-                            echo '<td width=250>';
+                            //echo '<td width=250>';
                                 echo '<a class="btn" href="read.php?id='.$row['id'].'">Read</a>';
                                 echo ' ';
                                 echo '<a class="btn btn-success" href="update.php?id='.$row['id'].'">Update</a>';

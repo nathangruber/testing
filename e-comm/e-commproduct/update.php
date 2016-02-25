@@ -24,7 +24,7 @@
             $valid = false;
         }
          
-        if (empty($street_1)) {
+        if (empty($description)) {
             $descriptionError = 'Please enter Description';
             $valid = false;
       //email verification was here
