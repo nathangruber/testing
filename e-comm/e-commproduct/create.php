@@ -38,12 +38,12 @@
         }       
         // insert data
         if ($valid) {
-	        try {
+	       try {
                 $pdo = Database::connect();
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "INSERT INTO product (name,description,price,category_fk) values(?, ?, ?, ?)";
                 $q = $pdo->prepare($sql);
-                $q->execute(array($name,$description,$price,$category));
+                $q->execute(array($name,$description,$price,$category_fk));
                 Database::disconnect();
                 header("Location: index.php");
             } catch (PDOException $e) {
@@ -59,7 +59,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">       
+   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
  
 <body>
@@ -101,9 +102,9 @@
                       <div class="control-group <?php echo !empty($categoryError)?'error':'';?>">
                         <label class="control-label">Category</label>
                         <div class="controls">
-                            <input name="category" type="text"  placeholder="Category" value="<?php echo !empty($category)?$category:'';?>">
-                            <?php if (!empty($categoryError)): ?>
-                                <span class="help-inline"><?php echo $categoryError;?></span>
+                            <input name="category_fk" type="text"  placeholder="Category" value="<?php echo !empty($category_fk)?$category_fk:'';?>">
+                            <?php if (!empty($category_fkError)): ?>
+                                <span class="help-inline"><?php echo $category_fkError;?></span>
                             <?php endif;?>
                         </div>
                       </div>
