@@ -41,7 +41,7 @@
                             echo '<td>'. $row['gender'] . '</td>';
                             echo '<td>'. $row['phone_number'] . '</td>';
                             echo '<td>'. $row['email_address'] . '</td>';
-                            echo '<td>'. $row['Permissions'] . '</td>';
+                            echo '<td>'. $row['permissions'] . '</td>';
                             echo '<td>'. $row['username'] . '</td>';
                             echo '<td>'. $row['password'] . '</td>';
                            echo '<td width=250>';
