@@ -38,7 +38,7 @@
         }       
         // insert data
         if ($valid) {
-	       try {
+	       //try {
                 $pdo = Database::connect();
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "INSERT INTO product (name,description,price,category_fk) values(?, ?, ?, ?)";
@@ -46,12 +46,12 @@
                 $q->execute(array($name,$description,$price,$category_fk));
                 Database::disconnect();
                 header("Location: index.php");
-            } catch (PDOException $e) {
+           // } catch (PDOException $e) {
                 //echo "msg: " . $e->getMessage();
                 //die();
                 Database::disconnect();
                 header("Location: index.php");
-            }
+           // }
 	}
     }
 ?>
