@@ -97,7 +97,7 @@
                       <div class="control-group <?php echo !empty($transaction_fkError)?'error':'';?>">
                         <label class="control-label">Transaction</label>
                         <div class="controls">
-                            <input name="transaction_fk" type="text"  placeholder="transaction" value="<?php echo !empty($transaction_fk)?$transaction_fk:'';?>">
+                            <input name="transaction_fk" type="text"  placeholder="Transaction" value="<?php echo !empty($transaction_fk)?$transaction_fk:'';?>">
                             <?php if (!empty($transaction_fkError)): ?>
                                 <span class="help-inline"><?php echo $transaction_fkError;?></span>
                             <?php endif;?>
