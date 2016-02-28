@@ -30,7 +30,8 @@
                   </thead>
                   <tbody>
                   <?php
-                   require '../database.php';
+                   require_once '../database.php';
+                   require_once '../navbar.php';
                    $pdo = Database::connect();
                    $sql = 'SELECT * FROM address ORDER BY id DESC';
                    foreach ($pdo->query($sql) as $row) {

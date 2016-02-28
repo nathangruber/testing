@@ -1,6 +1,6 @@
 <?php
-    require '../database.php';
- 
+    require_once '../database.php';
+     require_once '../navbar.php';
     if ( !isset($_GET['id']) || empty($_GET['id'])) {
         header("Location: index.php");
     } 

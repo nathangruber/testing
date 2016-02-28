@@ -1,5 +1,6 @@
 <?php
-    require '../database.php';
+    require_once '../database.php';
+    require_once '../navbar.php';
     $id = 0;
      
     if ( !empty($_GET['id'])) {
