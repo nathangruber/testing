@@ -47,8 +47,8 @@
                 Database::disconnect();
                 header("Location: index.php");
            } catch (PDOException $e) {
-                echo "msg: " . $e->getMessage();
-                die();
+               // echo "msg: " . $e->getMessage();
+                //die();
                 Database::disconnect();
                 header("Location: index.php");
             }
