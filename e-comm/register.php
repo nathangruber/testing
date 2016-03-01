@@ -62,44 +62,44 @@
      
                 <div class="span10 offset1">
                     <div class="row">
-                        <h3>Enter Primary Address</h3>
+                        <h3>Register</h3>
                     </div>
              
                     <form class="form-horizontal" action="create.php" method="post">
-                      <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
-                        <label class="control-label">Name</label>
+                      <div class="control-group <?php echo !empty($your_full_nameError)?'error':'';?>">
+                        <label class="control-label">Your Full Name</label>
                         <div class="controls">
-                            <input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
-                            <?php if (!empty($nameError)): ?>
-                                <span class="help-inline"><?php echo $nameError;?></span>
+                            <input name="your_full_name" type="text"  placeholder="Your Full Name" value="<?php echo !empty($your_full_name)?$your_full_name:'';?>">
+                            <?php if (!empty($your_full_nameError)): ?>
+                                <span class="help-inline"><?php echo $your_full_nameError;?></span>
                             <?php endif; ?>
                         </div>
                       </div>
-                      <div class="control-group <?php echo !empty($street_1Error)?'error':'';?>">
-                        <label class="control-label">Street Address</label>
+                      <div class="control-group <?php echo !empty($email_addressError)?'error':'';?>">
+                        <label class="control-label">Email Address</label>
                         <div class="controls">
-                            <input name="street_1" type="text" placeholder="Street Address" value="<?php echo !empty($street_1)?$street_1:'';?>">
-                            <?php if (!empty($street_1Error)): ?>
-                                <span class="help-inline"><?php echo $street_1Error;?></span>
+                            <input name="email_address" type="text" placeholder="Email Address" value="<?php echo !empty($email_address)?$email_address:'';?>">
+                            <?php if (!empty($email_addressError)): ?>
+                                <span class="help-inline"><?php echo $email_addressError;?></span>
                             <?php endif;?>
                         </div>
                       </div>
-                      <div class="control-group <?php echo !empty($street_2Error)?'error':'';?>">
-                        <label class="control-label">Street Address</label>
+                      <div class="control-group <?php echo !empty($usernameError)?'error':'';?>">
+                        <label class="control-label">Username</label>
                         <div class="controls">
-                            <input name="street_2" type="text"  placeholder="Street Address" value="<?php echo !empty($street_2)?$street_2:'';?>">
-                            <?php if (!empty($street_2Error)): ?>
-                                <span class="help-inline"><?php echo $street_2Error;?></span>
+                            <input name="username" type="text"  placeholder="Enter Username" value="<?php echo !empty($username)?$username:'';?>">
+                            <?php if (!empty($usernameError)): ?>
+                                <span class="help-inline"><?php echo $usernameError;?></span>
                             <?php endif;?>
                         </div>
                       </div>
                       
-                      <div class="control-group <?php echo !empty($cityError)?'error':'';?>">
+                      <div class="control-group <?php echo !empty($passwordError)?'error':'';?>">
                         <label class="control-label">City</label>
                         <div class="controls">
-                            <input name="city" type="text"  placeholder="City" value="<?php echo !empty($city)?$city:'';?>">
-                            <?php if (!empty($cityError)): ?>
-                                <span class="help-inline"><?php echo $cityError;?></span>
+                            <input name="password" type="text"  placeholder="Enter Password" value="<?php echo !empty($password)?$password:'';?>">
+                            <?php if (!empty($passwordError)): ?>
+                                <span class="help-inline"><?php echo $passwordError;?></span>
                             <?php endif;?>
                         </div>
                       </div>
