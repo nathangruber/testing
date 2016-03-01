@@ -1,6 +1,6 @@
 <?php
     require_once '../database.php';
- 
+   
  if ( !isset($_GET['id']) || empty($_GET['id'])) {
         header("Location: index.php");
     } 
@@ -71,7 +71,7 @@
         if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "UPDATE customers set name = ?, birth_date = ?, gender =?, phone_number = ?, email_address = ?, permissions = ?, username = ?, password = ? WHERE id = ?";
+            $sql = "UPDATE customer set name = ?, birth_date = ?, gender =?, phone_number = ?, email_address = ?, permissions = ?, username = ?, password = ? WHERE id = ?";
             $q = $pdo->prepare($sql);
             $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$username,$password,$id));
             Database::disconnect();
@@ -80,7 +80,7 @@
     } else {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT * FROM customers where id = ?";
+        $sql = "SELECT * FROM customer where id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
         if(($data = $q->fetch(PDO::FETCH_ASSOC)) == false){

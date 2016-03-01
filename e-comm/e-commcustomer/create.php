@@ -63,7 +63,7 @@
        
         // insert data
         if ($valid) {
-           try{
+           try {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "INSERT INTO customer (name,birth_date,gender,phone_number,email_address,permissions,username,password) values(?, ?, ?, ?, ?, ?, ?, ?)";
