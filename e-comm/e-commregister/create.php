@@ -1,7 +1,7 @@
 <?php
      
     require_once '../database.php';
-    require_once '../navbar.php';
+    //require_once '../navbar.php';
     if ( !empty($_POST)) {
         // keep track validation errors
         $your_full_nameError = null;
@@ -44,7 +44,7 @@
             $q = $pdo->prepare($sql);
             $q->execute(array($your_full_name,$email_address,$username,$password,$id));
             Database::disconnect();
-           //header("Location: index.php");
+            header("Location: index.php");
 	}
     }
 ?>
@@ -95,7 +95,7 @@
                       </div>
                       
                       <div class="control-group <?php echo !empty($passwordError)?'error':'';?>">
-                        <label class="control-label">City</label>
+                        <label class="control-label">Password</label>
                         <div class="controls">
                             <input name="password" type="text"  placeholder="Enter Password" value="<?php echo !empty($password)?$password:'';?>">
                             <?php if (!empty($passwordError)): ?>
@@ -115,5 +115,5 @@
   </body>
 </html>
 <?php
-require_once '../footer.php';
+//require_once '../footer.php';
 ?>

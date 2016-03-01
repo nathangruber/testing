@@ -13,7 +13,7 @@
 <body>
     <div class="container">
             <div class="row">
-                <h3>Category</h3>
+                <h3>Register</h3>
             </div>
             <div class="row">
               <p>
@@ -24,22 +24,24 @@
                 <table class="table table-striped table-bordered">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Description</th>
-                      
+                      <th>Your Full Name</th>
+                      <th>Email Address</th>
+                      <th>Username</th>
+                      <th>Password</th>
                     </tr>
                   </thead>
                   <tbody>
                   <?php
                    require_once '../database.php';
-                   require_once '../navbar.php';
+                   //require_once '../navbar.php';
                    $pdo = Database::connect();
-                   $sql = 'SELECT * FROM category ORDER BY id DESC';
+                   $sql = 'SELECT * FROM register ORDER BY id DESC';
                    foreach ($pdo->query($sql) as $row) {
                             echo '<tr>';
-                            echo '<td>'. $row['name'] . '</td>';
-                            echo '<td>'. $row['description'] . '</td>';
-                            
+                            echo '<td>'. $row['your_full_name'] . '</td>';
+                            echo '<td>'. $row['email_address'] . '</td>';
+                            echo '<td>'. $row['username'] . '</td>';
+                            echo '<td>'. $row['password'] . '</td>';
                            echo '<td width=250>';
                                 echo '<a class="btn" href="read.php?id='.$row['id'].'">Read</a>';
                                 echo ' ';
@@ -58,5 +60,5 @@
   </body>
 </html>
 <?php
-require_once '../footer.php';
+//require_once '../footer.php';
 ?>
