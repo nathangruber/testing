@@ -1,6 +1,5 @@
 <?php
-     
-    require_once '../database.php';
+     require_once '../database.php';
     //require_once '../navbar.php';
     if ( !empty($_POST)) {
         // keep track validation errors
@@ -106,7 +105,7 @@
 
                       <div class="form-actions">
                           <button type="submit" class="btn btn-success">Create</button>
-                          <a class="btn" href="index.php">Back</a>
+                          <a class="btn" href="registrationsuccess.php">Back</a>
                         </div>
                     </form>
                 </div>
