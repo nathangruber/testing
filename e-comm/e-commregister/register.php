@@ -1,5 +1,5 @@
 <?php
-     require_once '../database.php';
+     require_once 'database.php';
     //require_once '../navbar.php';
     if ( !empty($_POST)) {
         // keep track validation errors
