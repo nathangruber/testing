@@ -43,7 +43,7 @@
             $q = $pdo->prepare($sql);
             $q->execute(array($your_full_name,$email_address,$username,$password,$id));
             Database::disconnect();
-            header("Location: registration");
+            header("Location: registrationsuccess.php");
 	}
     }
 ?>
