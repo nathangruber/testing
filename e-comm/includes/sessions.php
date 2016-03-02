@@ -1,3 +1,8 @@
 <?php
-	require_once 'includes/database.php';
-	session_start();
+session_start();
+	
+	$loggedin = false;
+	if (!empty($_SESSION['user_name'])) {
+		$loggedin = true;
+	}
+?>

@@ -1,35 +1,46 @@
-<?php require_once 'includes/session.php' ?>
 <!DOCTYPE html>
-	<html lang="en">
-<head>
+<html lang="en">
+ <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">       
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</head>
-		<body>
-			<form method="post" action="validate.php" enctype="multipart/form-data">
-			  		<div class="control-group">
-			    		<label class="control-label" for="inputUsername">Username</label>
-			    		<div class="controls">
-			      			<input type="text" id="inputUser" name="username" placeholder="Username">
-			    		</div>
-			  		</div>
-			  		<div class="control-group">
-			    		<label class="control-label" for="inputPassword">Password</label>
-			    		<div class="controls">
-			      			<input type="password" name="password" id="inputPass" placeholder="Password">
-			    		</div>
-			  		</div>
-			  		<div class="control-group">
-			    		<div class="controls">
-			      			<label class="checkbox">
-			        			<input type="checkbox"> Remember me
-			      			</label>
-			      			<button id="send" type="submit" class="btn">Sign in</button>
-			    		</div>
-			  		</div>
-			  	</form>	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!--   <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">   -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
-		</body>
-	</html>
+    <title>Login</title>
+ </head>
+  
+  <body>
+    <?php require_once('includes/navbar.php');?>
+
+    
+    <div class="container">
+      <div class="starter-template">
+        <h1>Login</h1>
+        <p class="lead">Enter Username and Password to login.<br></p>
+      </div>
+      <div>
+        <form action="includes/login.php" method="post">
+          <input type="text" name="user_name" placeholder="user_name">
+          <input type="text" name="password" placeholder="password">
+          <input type="submit" value="Login">        
+        </form>
+      </div>
+      <div>
+      	<p>No Account? Register below</p>
+      </div>
+      <div>
+        <form action="register.php" method="post">
+          <input type="submit" value="Register">
+        </form>
+      </div>
+    </div>
+
+    <?php require_once('includes/footer.php');?>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
