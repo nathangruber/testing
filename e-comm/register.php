@@ -1,5 +1,4 @@
 <?php
-    error_reporting(E_ALL);
     require_once 'includes/database.php';
  
     if ( !empty($_POST)) {
@@ -30,10 +29,6 @@
         $nameError = 'Please enter Name';
         $valid = false;
       }
-      if (empty($last_name)) {
-        $last_nameError = 'Please enter Last Name';
-        $valid = false;
-      }
       if (empty($birth_date)) {
         $birth_dateError = 'Please enter your Birth Date';
         $valid = false;
@@ -46,7 +41,7 @@
         $email_addressError = 'Please enter Email Address';
         $valid = false;
       } else if ( !filter_var($email_address,FILTER_VALIDATE_EMAIL) ) {
-        $email_addressError = 'Please Enter a valid Emial Address';
+        $email_addressError = 'Please Enter a valid Email Address';
         $valid = false;
       }
       if (empty($username)) {
@@ -63,9 +58,9 @@
         try {
           $pdo = Database::connect();
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "INSERT INTO customer (name,last_name,birth_date,phone_number,email_address,username,password) values(?, ?, ?, ?, ?, ?, ?)";
+          $sql = "INSERT INTO customer (name,birth_date,phone_number,email_address,username,password) values(?, ?, ?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
-          $q->execute(array($name,$last_name,$birth_date,$phone_number,$email_address,$username,$password));
+          $q->execute(array($name,$birth_date,$phone_number,$email_address,$username,$password));
           Database::disconnect();
           header("Location: index.php");
         } catch (PDOException $e) {
@@ -95,7 +90,7 @@
     <div class="container">
       <div class="span10 offset1">
         <div class="row">
-          <h3>Please fill out all fields to register.</h3>
+          <h3>Please Register.</h3>
         </div>           
         <form class="form-horizontal" action="register.php" method="post"> 
 
@@ -105,16 +100,6 @@
               <input name="name" type="text" placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
               <?php if (!empty($nameError)): ?>
                 <span class="help-inline"><?php echo $nameError;?></span>
-              <?php endif;?>
-            </div>
-          </div>
-
-          <div class="control-group <?php echo !empty($last_nameError)?'error':'';?>">
-            <label class="control-label">Last Name</label>
-            <div class="controls">
-              <input name="last_name" type="text" placeholder="Last Name" value="<?php echo !empty($last_name)?$last_name:'';?>">
-              <?php if (!empty($last_nameError)): ?>
-                <span class="help-inline"><?php echo $last_nameError;?></span>
               <?php endif;?>
             </div>
           </div>
