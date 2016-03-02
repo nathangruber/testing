@@ -70,12 +70,12 @@
             $q = $pdo->prepare($sql);
             $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$username,$password));
             Database::disconnect();
-            header("Location: index.php");
+            header("Location: registrationsuccess.php");
         } catch (PDOException $e) {
             //echo "msg: " . $e->getMessage();
             //die);
             Database::disconnect();
-            header("Location: registrationsuccess.php");
+            header("Location: register.php");
         }
         }
     }
@@ -96,7 +96,7 @@
                         <h3>Register</h3>
                     </div>
              
-                    <form class="form-horizontal" action="registrationsuccess.php" method="post">
+                    <form class="form-horizontal" action="register.php" method="post">
                       <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
                         <label class="control-label">Name</label>
                         <div class="controls">
