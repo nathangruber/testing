@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta name="viewport" content="width=device-width, minimum-scale=0.1">
-<title>3.png (604×89)</title>
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 </head>
-<body style="margin: 0px;"><img style="-webkit-user-select: none" src="http://profileplugin.com/wp-content/uploads/2015/02/3.png"></body>
-<img style="-webkit-user-select: none" src="http://profileplugin.com/wp-content/uploads/2015/02/3.png">
+
+<body>
+<?php require_once '../navbar.php'; ?>
+
+<center>
+<h3>SUCCESFULLY REGISTERED</h3>
+<br><br><br>
+<p>go <a href="index.php">back</a> or <a href="loginpage.php">login</a>.</p>
+</center>
+
+<br><br><br><br><br><br>
+<?php require_once '../footer.php'; ?>
 </body>
 </html>
