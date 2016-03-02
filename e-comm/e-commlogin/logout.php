@@ -1,7 +1,6 @@
 <?php
-session_start();
-if(session_destroy()) // Destroying All Sessions
-{
-header("Location: index.php"); // Redirecting To Home Page
-}
+	session_start();
+	echo "You are logged out, Please come again";
+	header("Location: index.php");
+	session_destroy();
 ?>

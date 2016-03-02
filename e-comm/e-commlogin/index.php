@@ -1,29 +1,18 @@
-<?php
-
-if(isset($_SESSION['login_user'])){
-header("location: profile.php");
-}
-?>
+<?php  require_once '../session.php'; ?>
 <!DOCTYPE html>
-<html>
+	<html lang="en">
 <head>
-<title>Login</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">       
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
-<body>
-<div id="main">
-<h1>Login</h1>
-<div id="login">
-<h2>Login Form</h2>
-<form action="login.php" method="post">
-<label>UserName :</label>
-<input id="name" name="username" placeholder="username" type="text">
-<label>Password :</label>
-<input id="password" name="password" placeholder="**********" type="password">
-<input name="submit" type="submit" value=" Login ">
-<span><?php echo $error; ?></span>
-</form>
-			</div>
-		</div>
-	</body>
-</html>
+		<body>
+			<div class="results"></div>	
+			<div id="content">
+
+				<?php echo $_SESSION['username']; ?>
+
+				</div>
+		
+		</body>
+	</html>

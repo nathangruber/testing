@@ -1,38 +1,35 @@
-<?php
-if(isset($_SESSION['login_user'])){
-header("location: profile.php");
-}
-?>
+<?php require_once '../session.php' ?>
 <!DOCTYPE html>
-<html>
+	<html lang="en">
 <head>
-<title>Login Form</title>
-<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">       
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
-<body>
-<?php require_once '../navbar.php'; ?>
+		<body>
+			<form method="post" action="auth.php" enctype="multipart/form-data">
+			  		<div class="control-group">
+			    		<label class="control-label" for="inputUsername">Username</label>
+			    		<div class="controls">
+			      			<input type="text" id="inputUser" name="username" placeholder="Username">
+			    		</div>
+			  		</div>
+			  		<div class="control-group">
+			    		<label class="control-label" for="inputPassword">Password</label>
+			    		<div class="controls">
+			      			<input type="password" name="password" id="inputPass" placeholder="Password">
+			    		</div>
+			  		</div>
+			  		<div class="control-group">
+			    		<div class="controls">
+			      			<label class="checkbox">
+			        			<input type="checkbox"> Remember me
+			      			</label>
+			      			<button id="send" type="submit" class="btn">Sign in</button>
+			    		</div>
+			  		</div>
+			  	</form>	
 
-<div id="main">
-<h1>Welcome</h1>
-<div id="login">
-<h2>Login Form</h2>
-<form action="login.php" method="post">
-<label>UserName :</label>
-<input id="name" name="username" placeholder="username" type="text">
-<label>Password :</label>
-<input id="password" name="password" placeholder="**********" type="password">
-<input name="submit" type="submit" value=" Login ">
-<span><?php echo $error; ?></span>
-</form>
 
-
-
-
-<p><a href="index.php">back</a></p>
-
-
-
-			</div>
-		</div>
-	</body>
-</html>
+		</body>
+	</html>
