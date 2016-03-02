@@ -75,7 +75,7 @@
             //echo "msg: " . $e->getMessage();
             //die);
             Database::disconnect();
-            header("Location: index.php");
+            header("Location: registrationsuccess.php");
         }
         }
     }
