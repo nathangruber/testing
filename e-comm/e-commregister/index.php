@@ -24,7 +24,7 @@ header("location: profile.php");
 <input name="submit" type="submit" value=" Login ">
 <span><?php echo $error; ?></span>
 </form>
-</div>
-</div>
-</body>
+			</div>
+		</div>
+	</body>
 </html>
