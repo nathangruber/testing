@@ -18,7 +18,7 @@ $password = stripslashes($password);
 $username = mysql_real_escape_string($username);
 $password = mysql_real_escape_string($password);
 // Selecting Database
-$db = mysql_select_db("customer", $connection);
+$db = mysql_select_db("e-commerce", $connection);
 // SQL query to fetch information of registerd users and finds user match.
 $query = mysql_query("select * from customer where password='$password' AND username='$username'", $connection);
 $rows = mysql_num_rows($query);
