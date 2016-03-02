@@ -96,7 +96,7 @@
                         <h3>Register</h3>
                     </div>
              
-                    <form class="form-horizontal" action="create.php" method="post">
+                    <form class="form-horizontal" action="registrationsuccess.php" method="post">
                       <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
                         <label class="control-label">Name</label>
                         <div class="controls">
