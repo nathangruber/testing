@@ -27,10 +27,6 @@ $password=$_POST['password'];
             $_SESSION['uid'] = $id
             $_SESSION['username'] = $username
             $_SESSION['permission'] = $permission
-
-
-            Database::disconnect();
-            header("Location: index.php");
         } catch (PDOException $e) {
             //echo "msg: " . $e->getMessage();
             //die);
