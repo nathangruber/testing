@@ -1,5 +1,5 @@
+<?php require_once 'includes/session.php' ?>
 <!DOCTYPE html>
-<?php require_once '../session.php' ?>
 	<html lang="en">
 <head>
     <meta charset="utf-8">

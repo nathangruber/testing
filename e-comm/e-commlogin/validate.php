@@ -1,17 +1,8 @@
 <?php
-session_start(); // Starting Session
-$error=''; // Variable To Store Error Message
-if (empty($_POST['username']) || empty($_POST['password']) || !isset($_POST['password']) || !isset($_POST['username']) ) {
-$error = "Username or Password is invalid";
-}
-else{
-echo "Username or Password are not valid. Please re-enter.";
-}
-
 // Define $username and $password
-require_once '../database.php'
-$username=$_POST['username'];
-$password=$_POST['password'];
+require_once 'includes/database.php'
+$user =$_POST['username'];
+$pass =$_POST['password'];
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
   if ($valid) {
            try {
@@ -28,6 +19,8 @@ $password=$_POST['password'];
 	        $permission = $data['permission'];
             // if found
             $_SESSION['username'] = $username
+            $first = $data['first'];
+            $last = $data['last'];
             $_SESSION['id'] = $id
             $_SESSION['password'] = $password
             $_SESSION['permission'] = $permission
@@ -38,4 +31,12 @@ $password=$_POST['password'];
             header("Location: index.php");
         }
   }
+  if ($user == $username && $pass == $password) {
+                echo "Welcome " . $_SESSION["first"] . " You are logged in.";
+                echo  " in auth" . $_SESSION["userid"];
+            }
+            else {
+                echo "Username or Password invalid. Please try again.";
+            }
+            header("Location: index.php");      
 ?>
