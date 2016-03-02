@@ -1,7 +1,7 @@
 <?php
      
     require_once '../database.php';
- 
+    require_once '../session.php';
     if ( !empty($_POST)) {
         // keep track validation errors
         $nameError = null;

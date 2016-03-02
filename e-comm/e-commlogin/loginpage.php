@@ -1,5 +1,5 @@
-<?php require_once '../session.php' ?>
 <!DOCTYPE html>
+<?php require_once '../session.php' ?>
 	<html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 		<body>
-			<form method="post" action="auth.php" enctype="multipart/form-data">
+			<form method="post" action="validate.php" enctype="multipart/form-data">
 			  		<div class="control-group">
 			    		<label class="control-label" for="inputUsername">Username</label>
 			    		<div class="controls">
