@@ -28,16 +28,13 @@
       </div>
       
       <br>
-      
-      <div>
+       <div>
         <form action="register.php" method="post">
           <input type="submit" value="Register">
         </form>
       </div>
-      
       <br>
-
-      <div>
+     <div>
         <form action="includes/logout.php" method="post">
           <input type="submit" value="Logout">
         </form>
@@ -61,7 +58,6 @@
     </div><!-- /.container -->
 
     <?php require_once('includes/footer.php');?>
-
 
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
