@@ -93,7 +93,7 @@
      
                 <div class="span10 offset1">
                     <div class="row">
-                        <h3>Enter Customer Information</h3>
+                        <h3>Register</h3>
                     </div>
              
                     <form class="form-horizontal" action="create.php" method="post">
