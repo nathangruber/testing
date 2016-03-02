@@ -33,6 +33,10 @@
         $birth_dateError = 'Please enter your Birth Date';
         $valid = false;
       }
+      if (empty($gender)) {
+        $genderError = 'Please enter your Gender';
+        $valid = false;
+      }
       if (empty($phone_number)) {
         $phone_numberError = 'Please enter Phone Number';
         $valid = false;
@@ -58,9 +62,9 @@
         try {
           $pdo = Database::connect();
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "INSERT INTO customer (name,birth_date,phone_number,email_address,username,password) values(?, ?, ?, ?, ?, ?, ?)";
+          $sql = "INSERT INTO customer (name,birth_date,gender,phone_number,email_address,username,password) values(?, ?, ?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
-          $q->execute(array($name,$birth_date,$phone_number,$email_address,$username,$password));
+          $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$username,$password));
           Database::disconnect();
           header("Location: index.php");
         } catch (PDOException $e) {
@@ -110,6 +114,16 @@
               <input name="birth_date" type="text" placeholder="Birthday" value="<?php echo !empty($birth_date)?$birth_date:'';?>">
               <?php if (!empty($birth_dateError)): ?>
                 <span class="help-inline"><?php echo $birth_dateError;?></span>
+              <?php endif;?>
+            </div>
+          </div>
+
+          <div class="control-group <?php echo !empty($genderError)?'error':'';?>">
+            <label class="control-label">Gender</label>
+            <div class="controls">
+              <input name="gender" type="text" placeholder="Gender" value="<?php echo !empty($gender)?$gender:'';?>">
+              <?php if (!empty($genderError)): ?>
+                <span class="help-inline"><?php echo $genderError;?></span>
               <?php endif;?>
             </div>
           </div>
