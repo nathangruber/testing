@@ -24,8 +24,9 @@ $password=$_POST['password'];
 	        $password = $data['password'];
 	        $permission = $data['permission'];
             // if found
-            $_SESSION['uid'] = $id
             $_SESSION['username'] = $username
+            $_SESSION['uid'] = $id
+             $_SESSION['password'] = $password
             $_SESSION['permission'] = $permission
         } catch (PDOException $e) {
             //echo "msg: " . $e->getMessage();
