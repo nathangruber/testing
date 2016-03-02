@@ -60,7 +60,6 @@
          
         // insert data
       if ($valid) {
- die();
 
         try {
           $pdo = Database::connect();
@@ -80,22 +79,16 @@
 
 
 <!DOCTYPE html>
+<?php require_once('includes/navbar.php');?>
 <html lang="en">
- <head>
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--   <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">   -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-
-    <title>Register</title>
- </head>
-  
-  <body>
-    <?php require_once('includes/navbar.php');?>
-
-
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">      
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+ 
+<body>
+    
     <div class="container">
       <div class="span10 offset1">
         <div class="row">
