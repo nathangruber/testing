@@ -4,9 +4,12 @@ $error=''; // Variable To Store Error Message
 if (empty($_POST['username']) || empty($_POST['password']) || !isset($_POST['password']) || !isset($_POST['username']) ) {
 $error = "Username or Password is invalid";
 }
-else
-{
+else{
+echo "Username or Password are not valid. Please re-enter.";
+}
+
 // Define $username and $password
+require_once '../database.php'
 $username=$_POST['username'];
 $password=$_POST['password'];
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
