@@ -5,15 +5,15 @@
 </head>
 
 <body>
-<?php require_once '../navbar.php'; ?>
+<?php require_once 'includes/navbar.php'; ?>
 
 <center>
-<h3>SUCCESFULLY REGISTERED</h3>
+<h3>Succesfully Registered</h3>
 <br><br><br>
 <p>go <a href="index.php">back</a> or <a href="loginpage.php">login</a>.</p>
 </center>
 
 
-<?php require_once '../footer.php'; ?>
+<?php require_once 'includes/footer.php'; ?>
 </body>
 </html>
