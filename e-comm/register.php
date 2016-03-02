@@ -1,8 +1,7 @@
 <?php
     error_reporting(E_ALL); 
     require_once 'includes/database.php';
-    die();
- 
+
     if ( !empty($_POST)) {
         // keep track validation errors
       $nameError = null;
@@ -61,6 +60,7 @@
          
         // insert data
       if ($valid) {
+        
         try {
           $pdo = Database::connect();
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -74,7 +74,10 @@
         }
       }
     }
+    die();
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
