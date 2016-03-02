@@ -18,11 +18,15 @@ $password=$_POST['password'];
             $q = $pdo->prepare($sql);
             //save results for query
             $q->execute(array($username,$password));
-
+            $data = $q->fetch(PDO::FETCH_ASSOC);
+            $username = $data['username'];
+	        $id = $data['id'];
+	        $password = $data['password'];
+	        $permission = $data['permission'];
             // if found
-            //$_SESSION['uid'] = .....
-            //$_SESSION['name'] = .....
-            //$_SESSION['permission'] = .....
+            $_SESSION['uid'] = $id
+            $_SESSION['username'] = $username
+            $_SESSION['permission'] = $permission
 
 
             Database::disconnect();
@@ -31,7 +35,7 @@ $password=$_POST['password'];
             //echo "msg: " . $e->getMessage();
             //die);
             Database::disconnect();
-            header("Location: login.php");
+            header("Location: index.php");
         }
   }
 ?>
