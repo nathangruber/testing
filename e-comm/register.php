@@ -1,7 +1,7 @@
 <?php
     error_reporting(E_ALL); 
     require_once 'includes/database.php';
-    include_once 'includes/session.php';
+    require_once 'includes/session.php';
 
     if ( !empty($_POST)) {
         // keep track validation errors
