@@ -44,7 +44,7 @@
         <br>
         <?php
           if ($logged) {
-            echo "You are logged in.";
+            echo "You are logged in succesfully.";
             echo '<form method="POST" action="update.php">';
             echo '<input type="submit" value="Update User Info">';
             echo '</form>';

@@ -15,12 +15,12 @@ require_once('database.php');
        		$name = $query['name'];
        		$username = $query['username'];
        		$id = $query['id'];
-       		$permission = $query['permission'];
+       		$permission = $query['permissions'];
 			session_start();
 			$_SESSION['name'] = $name;
 			$_SESSION['username'] = $username;
 			$_SESSION['id'] = $id;
-			$_SESSION['permission'] = $permission;
+			$_SESSION['permissions'] = $permissions;
        		print_r($query);
 			header('Location: ../index.php');			
 		}
