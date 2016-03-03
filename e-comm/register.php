@@ -2,6 +2,10 @@
     error_reporting(E_ALL); 
     require_once 'includes/database.php';
     require_once 'includes/session.php';
+
+            echo "here";
+            die();
+    
     if ( !empty($_POST)) {
         // keep track validation errors
         $nameError = null;
@@ -81,8 +85,7 @@
         }
     }
 
-            echo "here";
-            die();
+
 ?>
 
 
