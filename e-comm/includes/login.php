@@ -9,24 +9,19 @@ require_once('database.php');
 		    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    $sql = "SELECT * FROM customer WHERE username = ? AND password =?";
 		    $q = $pdo->prepare($sql);
-       		$q->execute(array($username,$loginpassword));
+       		$q->execute(array($username,$password));
        		$query = $q->fetch(PDO::FETCH_ASSOC);
 		    Database::disconnect();
        		$name = $query['name'];
-       		$username = $query['username'];
+       		$user_name = $query['user_ame'];
        		$id = $query['id'];
        		$permission = $query['permission'];
 			session_start();
 			$_SESSION['name'] = $name;
-			$_SESSION['user_name'] = $user_name;
+			$_SESSION['username'] = $username;
 			$_SESSION['id'] = $id;
 			$_SESSION['permission'] = $permission;
        		print_r($query);
-/*			if ($username == $user_name && $loginpassword == $password) {
-			    echo "You have successfully logged in. Welcome back," . $_SESSION['name'] . "We've been waiting for you.";
-			} else {
-		    	echo "Username/Password pair not recognized.";
-			}*/
 			header('Location: ../index.php');			
 		}
 	}

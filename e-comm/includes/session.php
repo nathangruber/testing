@@ -1,7 +1,7 @@
 <?php
 session_start();
 	
-$loggedin = false;
+$logged = false;
 if (!empty($_SESSION['username'])) {
 	$loggedin = true;
 }
