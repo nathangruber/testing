@@ -12,6 +12,7 @@
         $permissionsError = null;
         $usernameError = null;
         $passwordError = null;
+
         // keep track post values
         $name = $_POST['name'];
         $birth_date = $_POST['birth_date'];
@@ -21,6 +22,7 @@
         $permissions = $_POST['permissions'];
         $username = $_POST['username'];
         $password = $_POST['password'];
+
         // validate input
        $valid = true;
         if (empty($name)) {
@@ -63,22 +65,22 @@
        
         // insert data
         if ($valid) {
-           try {
-            $pdo = Database::connect();
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO customer (name,birth_date,gender,phone_number,email_address,permissions,username,password) values(?, ?, ?, ?, ?, ?, ?, ?)";
-            $q = $pdo->prepare($sql);
-            $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$username,$password));
-            Database::disconnect();
-            header("Location: registrationsuccess.php");
-        } catch (PDOException $e) {
-            //echo "msg: " . $e->getMessage();
-            //die);
-            Database::disconnect();
-            header("Location: register.php");
-        }
+            try {
+                $pdo = Database::connect();
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = "INSERT INTO customer (name,birth_date,gender,phone_number,email_address,permissions,username,password) values(?, ?, ?, ?, ?, ?, ?, ?)";
+                $q = $pdo->prepare($sql);
+                $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$username,$password));
+                Database::disconnect();
+                header("Location: registrationsuccess.php");
+            } catch (PDOException $e) {
+                Database::disconnect();
+                echo "msg: " . $e->getMessage();
+                die();
+            }
         }
     }
+    die();
 ?>
 
 
@@ -86,8 +88,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">      
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">      
 </head>
  
 <body>
@@ -184,5 +185,6 @@
                 </div>
                  
     </div> <!-- /container -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
   </html>
