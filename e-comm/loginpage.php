@@ -17,7 +17,7 @@
     
     <div class="container">
       <div class="starter-template">
-        <h1>Login</h1>
+        <h1></h1>
         <p class="lead">Enter Username and Password to login.<br></p>
       </div>
       <div>
