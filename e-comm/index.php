@@ -33,6 +33,7 @@
         </form>
       </div>
        <div>
+        <br>
 <form action="register.php" method="post">
           <input type="submit" value="Register">
         </form>
