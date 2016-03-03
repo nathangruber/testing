@@ -13,7 +13,7 @@ require_once('database.php');
        		$query = $q->fetch(PDO::FETCH_ASSOC);
 		    Database::disconnect();
        		$name = $query['name'];
-       		$user_name = $query['user_ame'];
+       		$username = $query['username'];
        		$id = $query['id'];
        		$permission = $query['permission'];
 			session_start();
