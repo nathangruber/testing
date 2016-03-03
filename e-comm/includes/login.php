@@ -5,7 +5,7 @@ require_once('database.php');
 			
 			$pdo = Database::connect();
 			$username = $_POST['username'];
-			$loginpassword = $_POST['password'];
+			$password = $_POST['password'];
 		    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    $sql = "SELECT * FROM customer WHERE username = ? AND password =?";
 		    $q = $pdo->prepare($sql);
