@@ -1,80 +1,84 @@
 <?php
     error_reporting(E_ALL); 
     require_once 'includes/database.php';
-
+    require_once 'includes/session.php';
     if ( !empty($_POST)) {
         // keep track validation errors
-      $nameError = null;
-      $birth_dateError = null;
-      $genderError = null;
-      $phone_numberError = null;
-      $email_addressError = null;
-      $permissions = null;
-      $usernameError = null;
-      $passwordError = null;
-         
+        $nameError = null;
+        $birth_dateError = null;
+        $genderError = null;
+        $phone_numberError = null;
+        $email_addressError = null;
+        $permissionsError = null;
+        $usernameError = null;
+        $passwordError = null;
         // keep track post values
-      $name = $_POST['name'];
-      $birth_date = $_POST['birth_date'];
-      $gender = $_POST['gender'];
-      $phone_number = $_POST['phone_number'];
-      $email_address = $_POST['email_address'];
-      $permissions = $_POST['permissions'];
-      $username = $_POST['username'];
-      $password = $_POST['password'];
-         
+        $name = $_POST['name'];
+        $birth_date = $_POST['birth_date'];
+        $gender = $_POST['gender'];
+        $phone_number = $_POST['phone_number'];
+        $email_address = $_POST['email_address'];
+        $permissions = $_POST['permissions'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
         // validate input
-      $valid = true;
-        
-      if (empty($name)) {
-        $nameError = 'Please enter Name';
-        $valid = false;
-      }
-      if (empty($birth_date)) {
-        $birth_dateError = 'Please enter your Birth Date';
-        $valid = false;
-      }
-      if (empty($gender)) {
-        $genderError = 'Please enter your Gender';
-        $valid = false;
-      }
-      if (empty($phone_number)) {
-        $phone_numberError = 'Please enter Phone Number';
-        $valid = false;
-      }
-      if (empty($email_address)) {
-        $email_addressError = 'Please enter Email Address';
-        $valid = false;
-      } else if ( !filter_var($email_address,FILTER_VALIDATE_EMAIL) ) {
-        $email_addressError = 'Please Enter a valid Email Address';
-        $valid = false;
-      }
-      if (empty($username)) {
-        $usernameError = 'Please enter Username';
-        $valid = false;
-      }
-      if (empty($password)) {
-        $passwordError = 'Please enter Password';
-        $valid = false;
-      }
-         
-        // insert data
-      if ($valid) {
-
-        try {
-          $pdo = Database::connect();
-          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "INSERT INTO customer (name,birth_date,gender,phone_number,email_address,username,password) values(?, ?, ?, ?, ?, ?, ?)";
-          $q = $pdo->prepare($sql);
-          $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$username,$password));
-          Database::disconnect();
-          header("Location: index.php");
-        } catch (PDOException $e) {
-          echo $e->getMessage();
+       $valid = true;
+        if (empty($name)) {
+            $nameError = 'Please enter Name';
+            $valid = false;
         }
-      }
+         
+        if (empty($birth_date)) {
+            $birth_dateError = 'Please enter your Date of Birth';
+            $valid = false;
+         }
+         
+        if (empty($gender)) {
+            $genderError = 'Please enter your Gender';
+            $valid = false;
+        }
+         if (empty($phone_number)) {
+            $phone_numberError = 'Please enter your Phone Number';
+            $valid = false;
+        }
+         if (empty($email_address)) {
+            $email_addressError = 'Please enter Email Address';
+            $valid = false;
+        } else if ( !filter_var($email_address,FILTER_VALIDATE_EMAIL) ) {
+            $email_addressError = 'Please enter a valid Email Address';
+            $valid = false;
+        }
+         if (empty($permissions)) {
+            $permissionsError = 'Please enter Permissions';
+            $valid = false;
+        }
+        if (empty($username)) {
+            $usernameError = 'Please enter your Username';
+            $valid = false;
+        }
+        if (empty($password)) {
+            $passwordError = 'Please enter your Password';
+            $valid = false;
+        }
+       
+        // insert data
+        if ($valid) {
+           try {
+            $pdo = Database::connect();
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "INSERT INTO customer (name,birth_date,gender,phone_number,email_address,permissions,username,password) values(?, ?, ?, ?, ?, ?, ?, ?)";
+            $q = $pdo->prepare($sql);
+            $q->execute(array($name,$birth_date,$gender,$phone_number,$email_address,$permissions,$username,$password));
+            Database::disconnect();
+            header("Location: registrationsuccess.php");
+        } catch (PDOException $e) {
+            //echo "msg: " . $e->getMessage();
+            //die);
+            Database::disconnect();
+            header("Location: register.php");
+        }
+        }
     }
-   
 ?>
 
 
