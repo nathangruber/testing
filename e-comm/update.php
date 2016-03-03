@@ -51,7 +51,7 @@
               $query = $q->fetch(PDO::FETCH_ASSOC);
 
 echo '<tr>';
-echo '<form method="POST" action="userUpdate.php">';
+echo '<form method="POST" action="userupdate.php">';
 echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
 echo '<td><input type="text" name="birth_date" value="'.$query['birth_date'].'"></td>';
 echo '<td><input type="text" name="phone_number" value="'.$query['phone_number'].'"></td>';
@@ -60,7 +60,7 @@ echo '<td><input type="text" name="username" value="'.$query['username'].'"></td
 echo '<td>***</td>';
 echo '<td><input type="submit" value="Update"></td>';
 echo '</form>';
-echo '<form method="POST" action="userDelete.php">';
+echo '<form method="POST" action="userdelete.php">';
 echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
 echo '<td><input type="submit" value="Delete"></td>';
 echo '</form>';
