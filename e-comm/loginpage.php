@@ -8,7 +8,7 @@
     <!--   <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">   -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
-    <title>Login</title>
+    <title></title>
  </head>
   
   <body>
