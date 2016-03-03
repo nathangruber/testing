@@ -11,8 +11,8 @@
       $email_address = $_POST['email_address'];
       $username = $_POST['username'];
          
-      function valid($varname){
-        return ( !empty($varname) && isset($varname) );
+      function valid($uservar){
+        return ( !empty($uservar) && isset($uservar) );
       }
       if (!valid($name) || !valid($birth_date) || !valid($username) || !valid($phone_number) || valid($email_address)) {
         header("Location: update.php");
