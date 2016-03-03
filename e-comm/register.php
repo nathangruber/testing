@@ -122,8 +122,7 @@
                         <div class="controls">
                             <input name="gender" type="text"  placeholder="Gender" value="<?php echo !empty($gender)?$gender:'';?>">
                             <?php if (!empty($genderError)): ?>
-                                <span class="help-inline"><?php     die();
- echo $genderError;?></span>
+                                <span class="help-inline"><?php echo $genderError;?></span>
                             <?php endif;?>
                         </div>
                       </div>
