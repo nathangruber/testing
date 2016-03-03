@@ -18,7 +18,7 @@
 
     <div class="container">
       <div class="starter-template">
-        <h1>Login</h1>
+        <h1></h1>
         <p class="lead">Please Login or click Register to set up an account with us.<br></p>
       </div>
       <div>
