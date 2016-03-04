@@ -24,14 +24,14 @@
    </div>
   <div class="theme-table-image col-sm-4">
     
-  <form action="loginpage.php" method="post">
-          <input type="submit" value="Login">
+  <form action="inlcudes/logout.php" method="post">
+          <input type="submit" value="Logout">
         </form>
    </div>
  <div class="theme-table-image col-sm-4">
     
-  <form action="loginpage.php" method="post">
-          <input type="submit" value="Login">
+  <form action="register.php" method="post">
+          <input type="submit" value="register">
         </form>
    </div>
 </div>
