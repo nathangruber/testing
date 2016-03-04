@@ -22,6 +22,7 @@
         <p class="lead">Please Login or click Register to set up an account with us.<br></p>
       </div>
       <div>
+        <center>
 <form action="loginpage.php" method="post">
           <input type="submit" value="Login">
         </form>
@@ -42,7 +43,7 @@
       <div>
         <br>
         <br>
-
+</center>
         <?php
           if ($logged) {
             echo "You are logged in succesfully.";
