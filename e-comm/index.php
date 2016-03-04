@@ -15,29 +15,7 @@
 
   <body>
     <?php require_once('includes/navbar.php');?>
-<div class="starter-template" style="width: 100%;">
- <div class="theme-table-image col-sm-4">
-    <p class="lead">Please Login or click Register to set up an account with us.<br></p>
-  <form action="loginpage.php" method="post">
-          <input type="submit" value="Login">
-        </form>
-   </div>
-  <div class="theme-table-image col-sm-4">
-    
-  <form action="inlcudes/logout.php" method="post">
-          <input type="submit" value="Logout">
-        </form>
-   </div>
- <div class="theme-table-image col-sm-4">
-    
-  <form action="register.php" method="post">
-          <input type="submit" value="register">
-        </form>
-   </div>
-</div>
 
-
-<!--
     <div class="container" >
       <div class="starter-template">
         <h1></h1>
@@ -64,7 +42,7 @@
       <div>
         <br>
         <br>
--->
+
         <?php
           if ($logged) {
             echo "You are logged in succesfully.";
