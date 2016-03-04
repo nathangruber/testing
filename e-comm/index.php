@@ -15,7 +15,7 @@
 
   <body>
     <?php require_once('includes/navbar.php');?>
-<div class="container" style="width: 100%;">
+<div class="starter-template" style="width: 100%;">
  <div class="theme-table-image col-sm-4">
     <p class="lead">Please Login or click Register to set up an account with us.<br></p>
   <form action="loginpage.php" method="post">
