@@ -16,17 +16,24 @@
   <body>
     <?php require_once('includes/navbar.php');?>
 <div class="container" style="width: 100%;">
- <div class="theme-table-image col-sm-6">
+ <div class="theme-table-image col-sm-4">
     <p class="lead">Please Login or click Register to set up an account with us.<br></p>
   <form action="loginpage.php" method="post">
           <input type="submit" value="Login">
         </form>
-   
-
- </div>
- <div class="theme-table-image col-sm-6">
-   <img src="assets/img/Liverpool-Logo-Wallpaper-Download-1024x576.jpg" class="img-rounded" alt="Liverpool Logo" height="375" width="667">
- </div>
+   </div>
+  <div class="theme-table-image col-sm-4">
+    
+  <form action="loginpage.php" method="post">
+          <input type="submit" value="Login">
+        </form>
+   </div>
+ <div class="theme-table-image col-sm-4">
+    
+  <form action="loginpage.php" method="post">
+          <input type="submit" value="Login">
+        </form>
+   </div>
 </div>
 
 
