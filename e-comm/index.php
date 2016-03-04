@@ -28,22 +28,23 @@
         </form>
       </div>
       <br>
+       </center>
+<center>
        <div>
 <form action="includes/logout.php" method="post">
           <input type="submit" value="Logout">
         </form>
       </div>
-       <div>
+      </center>
+      <center>
+      <div>
         <br>
 <form action="register.php" method="post">
           <input type="submit" value="Register">
         </form>
       </div>
-      <br>
-      <div>
-        <br>
-        <br>
-</center>
+     </center>
+     
         <?php
           if ($logged) {
             echo "You are logged in succesfully.";
