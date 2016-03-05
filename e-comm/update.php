@@ -35,7 +35,8 @@
             <th>Username</th>
             <th>Password</th>
             <th>Button</th>
-          </tr>
+           <th>Button</th>
+         </tr>
         </thead>
         <tbody>
           <?php
