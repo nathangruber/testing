@@ -23,7 +23,7 @@
       </div>
       <div>
         <center>
-<form action="loginpage.php" method="post">
+<form action="loginpage.php" method="post" style="background-color:#E6E6FA">
           <input type="submit" value="Login">
         </form>
       </div>
@@ -44,7 +44,7 @@
         </form>
       </div>
      </center>
-     
+
         <?php
           if ($logged) {
             echo "You are logged in succesfully.";
