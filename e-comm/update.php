@@ -52,6 +52,7 @@
 echo '<tr>';
 echo '<form method="POST" action="userupdate.php">';
 echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
+echo '<td><input type="text" name="first_name" value="'.$query['name'].'"></td>';
 echo '<td><input type="text" name="birth_date" value="'.$query['birth_date'].'"></td>';
 echo '<td><input type="text" name="phone_number" value="'.$query['phone_number'].'"></td>';
 echo '<td><input type="text" name="email_address" value="'.$query['email_address'].'"></td>';
