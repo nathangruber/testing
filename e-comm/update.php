@@ -40,14 +40,13 @@
         </thead>
         <tbody>
           <?php
-            // include '../database.php';   --already required above
           if($logged) {
               $pdo = Database::connect();
-              $username = $_POST['username'];
+              $user_name = $_POST['username'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = 'SELECT * FROM customer WHERE username = ?';
               $q = $pdo->prepare($sql);
-              $q->execute(array($username));
+              $q->execute(array($user_name));
               $query = $q->fetch(PDO::FETCH_ASSOC);
 
 echo '<tr>';
@@ -69,7 +68,8 @@ echo '</tr>';
   }
         
 Database::disconnect();
-}
+print_r($query);
+
           ?>
         </tbody>
       </table>
@@ -84,4 +84,3 @@ Database::disconnect();
   <script src="assets/js/bootstrap.min.js"></script>
   </body>
   </html>
-</html>

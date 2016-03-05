@@ -14,7 +14,7 @@
       function valid($uservar){
         return ( !empty($uservar) && isset($uservar) );
       }
-      if (!valid($name) || !valid($birth_date) || !valid($username) || !valid($phone_number) || valid($email_address)) {
+      if (!valid($name) || !valid($birth_date) || !valid($phone_number) || !valid($email_address) || valid($username) {
         header("Location: update.php");
       } else if (!valid($email_address)) {
         header("Location: update.php");
