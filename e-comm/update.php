@@ -34,8 +34,8 @@
             <th>Email Address</th>
             <th>Username</th>
             <th>Password</th>
-            <th>Button</th>
-           <th>Button</th>
+            <th>Update</th>
+           <th>Delete</th>
          </tr>
         </thead>
         <tbody>
@@ -77,7 +77,7 @@ print_r($query);
       </table>
     </div>
     <div>
-      <a href="index.php">Return to Index</a>
+      <a href="index.php">Return to Login Page</a>
     </div>
   </div> <!-- /container -->
 
