@@ -31,7 +31,7 @@
        </center>
 <center>
        <div>
-<form action="includes/logout.php" method="post" style="background-color:#E6E6FA"> 
+<form action="includes/logout.php" method="post" style="background-color:#00ffff"> 
           <input type="submit" value="Logout">
         </form>
       </div>
@@ -39,7 +39,7 @@
       <center>
       <div>
         <br>
-<form action="register.php" method="post" style="background-color:#E6E6FA">
+<form action="register.php" method="post" style="background-color:#00ffff">
           <input type="submit" value="Register">
         </form>
       </div>
