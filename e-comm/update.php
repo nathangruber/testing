@@ -58,7 +58,7 @@ echo '<td><input type="text" name="phone_number" value="'.$query['phone_number']
 echo '<td><input type="text" name="email_address" value="'.$query['email_address'].'"></td>';
 echo '<td><input type="text" name="username" value="'.$query['username'].'"></td>';
 echo '<td><input type="text" name="username" value="'.$query['password'].'"></td>';
-echo '<td>***</td>';
+echo '<td>********</td>';
 echo '<td><input type="submit" value="Update"></td>';
 echo '</form>';
 echo '<form method="POST" action="userdelete.php">';
