@@ -10,6 +10,7 @@
 <center>
 <h3>Succesfully Registered</h3>
 <br><br><br>
+<p> Succesfully Registered<p>
 <p>go <a href="index.php">back</a> or <a href="loginpage.php">login</a>.</p>
 </center>
 
