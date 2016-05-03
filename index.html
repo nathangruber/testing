@@ -7,18 +7,18 @@
    <title></title>
    <link rel="stylesheet" type="text/css" media="all" href="styles.css">
 </head>
-
+​
 <body ng-controller="GitHubCtrl">
-
+​
 <div id="w">
    <div>
       <h1></h1>
-
+​
       <p>Enter a single Github username below and click the button to display profile info.</p>
-
+​
       <input type="text" id="ghusername" ng-model="username" placeholder="Github username...">
       <a href="#" id="ghsubmitbtn" ng-click="getGitInfo()">Pull User Data</a>
-
+​
       <div id="ghapidata" class="clearfix"></div>
    </div>
    
@@ -27,11 +27,11 @@
    </div>
    
    <div ng-show="loaded">
-
+​
       <h2> {{user.name}}
          <span class="smallname">(@<a href="{{user.html_url}}" target="_blank"> {{user.login}} </a>)</span>
       </h2>
-
+​
       <div class="ghcontent">
          <div class="avi">
             <a href="{{ user.html_url }}" target="_blank">
@@ -40,10 +40,10 @@
          
          Followers: {{ user.followers }} - Following: {{ user.following }}<br>Repos: {{ user.public_repos }}</p>
       </div>
-
+​
       <div class="repolist clearfix">
          <p ng-hide="reposFound">No repos!</p>
-
+​
          <div ng-show="reposFound">
             <p><strong>Repos List:</strong></p>
             <ul ng-repeat="repo in repos">
@@ -53,14 +53,14 @@
       </div>
    </div>
 </div>
-
-
+​
+​
 <script>
    function GitHubCtrl($scope, $http) {
       $scope.getGitInfo = function () {
          $scope.userNotFound = false;
          $scope.loaded = false;
-
+​
          $http.get("https://api.github.com/users/" + $scope.username)
                .success(function (data) {
                   if (data.name == "") data.name = data.login;
@@ -70,19 +70,46 @@
                .error(function () {
                   $scope.userNotFound = true;
                });
-
+​
                
          $http.get("https://api.github.com/users/" + $scope.username + "/repos").success(function (data) {
             $scope.repos = data;
             $scope.reposFound = data.length > 0;
      
-
+​
             });
       }
    }
 </script>
+<script>
+var Github = require('github-api');
+var detect = require('language-detect');
+
+var github = new Github({
+ token: "7704965537ff60b3b8b55e781ed8d05350bd32dc",
+ auth: "oauth"
+});
+
+
+var repo = github.getRepo('nathangruber', 'testing');
+
+
+repo.read('master', 'github/testing/index.html', function(err, data) {
+   console.log(err);
+   console.log(data);
+});
+repo.getTree('master', function(err, tree) {
+   console.log(err);
+   console.log(tree);
+});
+detect('master' + 'testing/index.html', function (err, language) {
+  console.log(err);      //=> null
+  console.log(language); //=> "JavaScript"
+});
 
 
 
+</script>
+​
 </body>
 </html>
